@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "49485544000",
+    "firebase_url": "https://healio-cva-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "healio-cva",
+    "storage_bucket": "healio-cva.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:49485544000:android:2c651ac5a939bcd83afda5",
+        "android_client_info": {
+          "package_name": "com.humangodcvaki.Healio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "49485544000-c8ivgredprgklshao02ul5p8b06g7hj3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.humangodcvaki.Healio",
+            "certificate_hash": "f83302e1720d50d1c185950db083c1b438af3049"
+          }
+        },
+        {
+          "client_id": "49485544000-tvdo25vigkefkorlgfc8e5lqjr5flktb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNXffkVNou8kMk6a9R8M3acYYXcGoWzRo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "49485544000-tvdo25vigkefkorlgfc8e5lqjr5flktb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

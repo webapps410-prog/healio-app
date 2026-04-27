@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context=".VideoCallActivity">
+
+    <!-- Remote Video View (Full Screen) -->
+    <org.webrtc.SurfaceViewRenderer
+        android:id="@+id/remoteVideoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Local Video View (Picture-in-Picture) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLocalVideo"
+        android:layout_width="120dp"
+        android:layout_height="160dp"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="8dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <org.webrtc.SurfaceViewRenderer
+            android:id="@+id/localVideoView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Status Text -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connecting..."
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        android:background="#80000000"
+        android:padding="12dp"
+        android:textStyle="bold"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Control Panel -->
+    <LinearLayout
+        android:id="@+id/controlPanel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#80000000"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Primary Controls -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <!-- Mute Audio Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#424242">
+
+                <Button
+                    android:id="@+id/btnMuteAudio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="🎤"
+                    android:textSize="24sp"
+                    android:background="@android:color/transparent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- End Call Button (Red) -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="35dp"
+                app:cardElevation="6dp"
+                app:cardBackgroundColor="#F44336">
+
+                <Button
+                    android:id="@+id/btnEndCall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="📞"
+                    android:textSize="32sp"
+                    android:background="@android:color/transparent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Mute Video Button -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_margin="8dp"
+                app:cardCornerRadius="30dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#424242">
+
+                <Button
+                    android:id="@+id/btnMuteVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="📹"
+                    android:textSize="24sp"
+                    android:background="@android:color/transparent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Secondary Control - Switch Camera -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="#616161">
+
+                <Button
+                    android:id="@+id/btnSwitchCamera"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="🔄"
+                    android:textSize="20sp"
+                    android:background="@android:color/transparent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+        <!-- Control Labels -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mute"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="End Call"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Video"
+                android:textSize="12sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

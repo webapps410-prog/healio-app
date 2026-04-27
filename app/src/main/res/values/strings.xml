@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Healio</string>
+    <string name="app_logo">Healio Logo</string>
+    <string name="tagline">Your Health Companion</string>
+</resources>

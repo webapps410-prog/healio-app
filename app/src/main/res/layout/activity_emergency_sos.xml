@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF0000"
+    tools:context=".EmergencySOSActivity">
+
+    <!-- Emergency Info -->
+    <TextView
+        android:id="@+id/tvEmergencyInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="⚠️ EMERGENCY SERVICES"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        android:padding="20dp"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- EMERGENCY Button (Ambulance only) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardEmergency"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvEmergencyInfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cardHighEmergency">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FF6600">
+
+            <Button
+                android:id="@+id/btnEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="🚑\nEMERGENCY"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- HIGH EMERGENCY Button (Ambulance + Doctor) -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardHighEmergency"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="80dp"
+        app:cardElevation="10dp"
+        app:layout_constraintTop_toBottomOf="@id/tvEmergencyInfo"
+        app:layout_constraintStart_toEndOf="@id/cardEmergency"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#990000">
+
+            <Button
+                android:id="@+id/btnHighEmergency"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="🚨\nHIGH\nEMERGENCY"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:background="@android:color/transparent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Labels below buttons -->
+    <TextView
+        android:id="@+id/tvEmergencyLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nearest Ambulance"
+        android:textSize="12sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardEmergency"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/cardHighEmergency" />
+
+    <TextView
+        android:id="@+id/tvHighEmergencyLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ambulance + All Doctors"
+        android:textSize="12sp"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/cardHighEmergency"
+        app:layout_constraintStart_toEndOf="@id/cardEmergency"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Info card explaining the two levels -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="#CC000000"
+        app:layout_constraintTop_toBottomOf="@id/tvEmergencyLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚑  EMERGENCY"
+                android:textColor="#FF9944"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Alerts the nearest available ambulance driver. Search starts at 20 km and expands automatically."
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="🚨  HIGH EMERGENCY"
+                android:textColor="#FF4444"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Simultaneously alerts the nearest ambulance driver AND all registered doctors."
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Find Nearby Ambulance Button -->
+    <Button
+        android:id="@+id/btnFindNearbyAmbulance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🚑 Find Nearby Ambulances"
+        android:textSize="16sp"
+        android:backgroundTint="@android:color/white"
+        android:textColor="#FF0000"
+        android:layout_margin="16dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottomNavigation"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:menu="@menu/bottom_nav_menu"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

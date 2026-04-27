@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#B71C1C"
+    android:padding="24dp">
+
+    <!-- Alert Icon -->
+    <ImageView
+        android:id="@+id/ivAlertIcon"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:src="@android:drawable/ic_dialog_alert"
+        android:tint="#FFFFFF" />
+
+    <!-- Patient Name -->
+    <TextView
+        android:id="@+id/tvPatientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ivAlertIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:text="Patient Name"
+        android:textColor="#FFFFFF"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <!-- Alert Info -->
+    <TextView
+        android:id="@+id/tvAlertInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvPatientName"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Emergency SOS Alert"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:lineSpacingExtra="4dp" />
+
+    <!-- Button Container -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <!-- Decline Button -->
+        <Button
+            android:id="@+id/btnDecline"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginEnd="32dp"
+            android:background="@android:drawable/ic_delete"
+            android:backgroundTint="#F44336"
+            android:text="✕"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <!-- Accept Button -->
+        <Button
+            android:id="@+id/btnAccept"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@android:drawable/ic_menu_call"
+            android:backgroundTint="#4CAF50"
+            android:text="✓"
+            android:textColor="#FFFFFF"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Pulsing Animation Overlay (optional, you can add this programmatically) -->
+    <View
+        android:id="@+id/pulseOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:alpha="0.2"
+        android:background="#FFFFFF" />
+
+</RelativeLayout>
